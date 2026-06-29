@@ -1,4 +1,4 @@
-import type { PricingPlan, FAQItem, ClientCase } from '@/types';
+import type { PricingPlan, FAQItem } from '@/types';
 
 const zh = {
   // ===== 全局 =====
@@ -74,19 +74,6 @@ const zh = {
     ],
   },
 
-  // ===== IG 真实案例 =====
-  igCases: [
-    {
-      id: 'choliverhk',
-      handle: '@choliverhk',
-      igUrl: 'https://www.instagram.com/choliverhk/',
-      categoryZh: '美容/個人品牌',
-      categoryEn: 'Beauty / Personal Brand',
-      descriptionZh: '穩定每日出 Story + Post，品牌形象一致，互動率提升',
-      descriptionEn: 'Daily Stories & Posts with consistent branding and improved engagement',
-    },
-  ],
-
   // ===== 痛点 =====
   painPoints: {
     label: '常見問題',
@@ -136,13 +123,6 @@ const zh = {
     { questionZh: 'AI 生成的內容質素如何？', questionEn: 'How good is AI-generated content?', answerZh: 'AIPOST 使用最新 AI 模型，貼近真人語氣，可設定品牌風格，發佈前可編輯。', answerEn: 'AIPOST uses the latest AI models with natural tone, customizable to your brand voice.' },
     { questionZh: '支援什麼語言？', questionEn: 'What languages are supported?', answerZh: '目前支援繁體中文和英文內容生成。', answerEn: 'Currently supporting Traditional Chinese and English.' },
   ] as FAQItem[],
-
-  // ===== 客人案例 =====
-  clientCases: [
-    { id: 'beauty', categoryZh: '美容院', categoryEn: 'Beauty Salon', topicZh: '夏日護膚優惠', topicEn: 'Summer Skincare Promo', igCaptionZh: '☀️ 夏日護膚不可少！保濕 + 防晒一步到位 💧 限時買一送一 🔥\n📍 中環店\n\n#夏日護膚 #美容優惠 #香港美容 #aipost', igCaptionEn: '☀️ Summer skincare essentials! Hydrate + Protect in one step 💧 Buy 1 Get 1 FREE 🔥\n📍 Central Store\n\n#SummerSkincare #BeautyPromo #HKBeauty #aipost', fbCaptionZh: '【夏日護膚優惠】保濕防晒一步到位，限時買一送一！📍 中環店', fbCaptionEn: '【Summer Skincare Promo】Hydrate & Protect, Buy 1 Get 1 FREE! 📍 Central', hashtagsZh: '#夏日護膚 #美容優惠 #香港美容', hashtagsEn: '#SummerSkincare #BeautyPromo #HKBeauty' },
-    { id: 'coffee', categoryZh: '咖啡店', categoryEn: 'Coffee Shop', topicZh: '推出全新手工咖啡系列', topicEn: 'New Handcrafted Coffee Series', igCaptionZh: '☕ 手工咖啡新登場！每一杯都係匠心沖製 ✨ 新品限時優惠 🔥\n📍 旺角旗艦店\n\n#手工咖啡 #咖啡控 #香港美食 #aipost', igCaptionEn: '☕ New handcrafted coffee! Every cup is artisan-brewed ✨ Launch offer now live 🔥\n📍 Mong Kok Flagship\n\n#HandcraftedCoffee #CoffeeLovers #HKFood #aipost', fbCaptionZh: '【全新手工咖啡系列隆重登場】從選豆到沖製精心設計，新品限時優惠！📍 旺角旗艦店', fbCaptionEn: '【New Handcrafted Coffee Series】From bean to brew, carefully designed. Launch offer now live! 📍 Mong Kok', hashtagsZh: '#手工咖啡 #咖啡控 #香港美食', hashtagsEn: '#HandcraftedCoffee #CoffeeLovers #HKFood' },
-  { id: 'education', categoryZh: '教育中心', categoryEn: 'Education Center', topicZh: '暑期課程招生', topicEn: 'Summer Course Enrollment', igCaptionZh: '📚 暑期課程招生中！STEM + 英文 + 數學 💪 早鳥減 $500 🎉\n📍 太子教學中心\n\n#暑期課程 #STEM教育 #香港補習 #aipost', igCaptionEn: '📚 Summer courses enrolling now! STEM + English + Math 💪 Early bird $500 off 🎉\n📍 Prince Edward\n\n#SummerCourses #STEMEducation #HKLearning #aipost', fbCaptionZh: '【暑期課程招生】STEM × 英文 × 數學三合一，早鳥優惠每科減 $500！📍 太子教學中心', fbCaptionEn: '【Summer Course Enrollment】STEM × English × Math, early bird $500 off! 📍 Prince Edward', hashtagsZh: '#暑期課程 #STEM教育 #香港補習', hashtagsEn: '#SummerCourses #STEMEducation #HKLearning' },
-  ] as ClientCase[],
 
   testimonials: {
     label: '客戶案例',

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CreditCard, Mail, ShieldCheck } from 'lucide-react';
+import { CreditCard, Mail } from 'lucide-react';
 import type { Language } from '@/types';
 import { t } from '@/i18n';
 
@@ -46,10 +46,6 @@ export function Footer({ language }: FooterProps) {
           <div>
             <h3 className="text-sm font-semibold text-foreground mb-4">{language === 'zh' ? '信任與聯絡' : 'Trust & Contact'}</h3>
             <div className="mb-4 space-y-2 text-sm text-muted-foreground">
-              <p className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-brand-purple" />
-                {lang.global.trust.reviewBeforePublish}
-              </p>
               <p className="flex items-center gap-2">
                 <CreditCard className="h-4 w-4 text-brand-orange" />
                 {lang.global.trust.securePayment}

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
-import { Instagram, ExternalLink, User } from 'lucide-react';
+import { Instagram, User } from 'lucide-react';
 import type { Language } from '@/types';
 
 // -----------------------------------------------------------
@@ -51,7 +51,7 @@ function openInstagram(igUrl: string, handle: string) {
 //  Skeleton
 // -----------------------------------------------------------
 
-function Skeleton({ language }: { language: Language }) {
+function Skeleton({ language: _language }: { language: Language }) {
   return (
     <div className="animate-pulse">
       <div className="bg-white rounded-[1.5rem] border border-border/60 shadow-soft-panel p-8">
@@ -192,7 +192,7 @@ export function InstagramShowcase({ language }: Props) {
   const [profile, setProfile] = useState<IgProfileData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const intervalRef = useRef<ReturnType<typeof setInterval>>();
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const fetchProfile = useCallback(async () => {
     try {

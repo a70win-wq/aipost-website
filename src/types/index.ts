@@ -22,20 +22,6 @@ export interface FAQItem {
   answerEn: string;
 }
 
-export interface ClientCase {
-  id: string;
-  categoryZh: string;
-  categoryEn: string;
-  topicZh: string;
-  topicEn: string;
-  igCaptionZh: string;
-  igCaptionEn: string;
-  fbCaptionZh: string;
-  fbCaptionEn: string;
-  hashtagsZh: string;
-  hashtagsEn: string;
-}
-
 export interface IgProfile {
   avatarUrl: string;
   displayName: string;
