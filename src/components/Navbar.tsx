@@ -36,10 +36,10 @@ export function Navbar({ language, setLanguage }: NavbarProps) {
     <nav className={cn(
       'fixed left-0 right-0 top-0 z-50 transition-all duration-300',
       scrolled
-        ? 'py-3'
-        : 'bg-transparent'
+        ? 'bg-white/95 shadow-sm backdrop-blur-xl'
+        : 'bg-white/75 backdrop-blur-lg'
     )}>
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/60">
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white shadow-soft-panel">
@@ -48,8 +48,8 @@ export function Navbar({ language, setLanguage }: NavbarProps) {
           <span className="text-xl font-bold text-gradient">AIPOST</span>
         </Link>
 
-        {/* Desktop nav */}
-        <div className="pill-surface hidden items-center gap-1 rounded-full p-1 md:flex">
+        {/* Desktop nav — centered between logo & CTA */}
+        <div className="pill-surface absolute left-1/2 -translate-x-1/2 hidden items-center gap-1 rounded-full p-1 md:flex">
           {navLinks.map(link => (
             <Link
               key={link.to}

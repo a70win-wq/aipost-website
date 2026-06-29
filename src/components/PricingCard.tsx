@@ -12,6 +12,7 @@ interface PricingCardProps {
 
 export function PricingCard({ plan, isAnnual, language, className }: PricingCardProps) {
   const price = isAnnual ? plan.priceAnnual : plan.priceMonthly;
+  const name = language === 'zh' ? plan.nameZh : plan.nameEn;
   const features = language === 'zh' ? plan.featuresZh : plan.featuresEn;
   const target = language === 'zh' ? plan.targetZh : plan.targetEn;
   const tasks = language === 'zh' ? plan.tasksZh : plan.tasksEn;
@@ -33,7 +34,7 @@ export function PricingCard({ plan, isAnnual, language, className }: PricingCard
       )}
 
       {/* Plan name */}
-      <h3 className="text-xl font-bold">{plan.nameEn}</h3>
+      <h3 className="text-xl font-bold">{name}</h3>
       <p className="text-sm text-muted-foreground mt-1">{target}</p>
 
       {/* Price */}

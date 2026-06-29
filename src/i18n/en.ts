@@ -10,7 +10,7 @@ const en = {
       productLinks: { pricing: 'Pricing', start: 'Get Started' },
       company: 'Company',
       companyLinks: { terms: 'Terms of Service', privacy: 'Privacy Policy', contact: 'Contact Us' },
-      contactEmail: 'hello@aipost.com',
+      contactEmail: '+852 6545 1747',
       copyright: '© 2026 AIPOST. All rights reserved.',
     },
     pricing: {
@@ -44,7 +44,7 @@ const en = {
     subtitle: 'AIPOST generates posts, adapts tone for each platform, and schedules publishing — so your brand stays consistent.',
     ctaPrimary: 'Get Started', ctaSecondary: 'See Pricing',
     fineText: 'HK$99/mo | Credit card supported | Cancel anytime',
-    proof: ['Choose a plan to start'],
+    proof: [],
     stats: [
       { value: '2x', label: 'IG / FB versions' },
       { value: '30', label: 'Monthly tasks' },
@@ -75,7 +75,7 @@ const en = {
   pricingPlans: [
     { id: 'starter', nameZh: 'Starter', nameEn: 'Starter', priceMonthly: 99, priceAnnual: 79, tasksZh: '10 個內容任務', tasksEn: '10 content tasks', targetZh: '小店 / 個人品牌', targetEn: 'Small shops / Personal brands', popular: false, featuresZh: ['10 個內容任務', 'IG + FB 雙版本', 'AI Hashtag 生成', '內容排程月曆', '品牌語氣設定'], featuresEn: ['10 content tasks', 'IG + FB dual versions', 'AI Hashtag generation', 'Content scheduling calendar', 'Brand tone settings'] },
     { id: 'growth', nameZh: 'Growth', nameEn: 'Growth', priceMonthly: 199, priceAnnual: 159, tasksZh: '20 個內容任務', tasksEn: '20 content tasks', targetZh: '穩定經營品牌', targetEn: 'Growing brands', popular: true, featuresZh: ['20 個內容任務', 'IG + FB 雙版本', 'AI Hashtag 生成', '內容排程月曆', '品牌語氣設定', '優先客服支援'], featuresEn: ['20 content tasks', 'IG + FB dual versions', 'AI Hashtag generation', 'Content scheduling calendar', 'Brand tone settings', 'Priority support'] },
-    { id: 'pro', nameZh: 'Pro', nameEn: 'Pro', priceMonthly: 299, priceAnnual: 239, tasksZh: '30 個內容任務', tasksEn: '30 content tasks', targetZh: '每日曝光品牌', targetEn: 'Daily exposure brands', popular: false, featuresZh: ['30 個內容任務', 'IG + FB 雙版本', 'AI Hashtag 生成', '內容排程月曆', '品牌語氣設定', '優先客服支援', '數據分析報告'], featuresEn: ['30 content tasks', 'IG + FB dual versions', 'AI Hashtag generation', 'Content scheduling calendar', 'Brand tone settings', 'Priority support', 'Analytics reports'] },
+    { id: 'pro', nameZh: 'Pro', nameEn: 'Pro', priceMonthly: 299, priceAnnual: 239, tasksZh: '30 個內容任務', tasksEn: '30 content tasks', targetZh: '每日曝光品牌', targetEn: 'Daily exposure brands', popular: false, featuresZh: ['30 個內容任務', 'IG + FB 雙版本', 'AI Hashtag 生成', '內容排程月曆', '品牌語氣設定', '優先客服支援', '數據分析報告'], featuresEn: ['30 content tasks', 'IG + FB dual versions', 'AI Hashtag generation', 'Content scheduling calendar', 'Brand tone settings', 'Priority support'] },
   ] as PricingPlan[],
 
   faqItems: [

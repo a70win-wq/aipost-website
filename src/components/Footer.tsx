@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
-import { CreditCard, Mail } from 'lucide-react';
+import { CreditCard } from 'lucide-react';
 import type { Language } from '@/types';
 import { t } from '@/i18n';
+
+const WHATSAPP_NUMBER = '85265451747';
+const WHATSAPP_MSG = '你根，查詢AIPOST服務';
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
 
 interface FooterProps {
   language: Language;
@@ -38,7 +42,7 @@ export function Footer({ language }: FooterProps) {
             <div className="flex flex-col gap-2">
               <Link to="/terms" className="text-sm text-muted-foreground transition-colors hover:text-brand-pink">{lang.global.footer.companyLinks.terms}</Link>
               <Link to="/terms" className="text-sm text-muted-foreground transition-colors hover:text-brand-pink">{lang.global.footer.companyLinks.privacy}</Link>
-              <a href="mailto:hello@aipost.com" className="text-sm text-muted-foreground transition-colors hover:text-brand-pink">{lang.global.footer.companyLinks.contact}</a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-brand-pink">{lang.global.footer.companyLinks.contact}</a>
             </div>
           </div>
 
@@ -51,9 +55,9 @@ export function Footer({ language }: FooterProps) {
                 {lang.global.trust.securePayment}
               </p>
             </div>
-            <a href="mailto:hello@aipost.com" className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-brand-pink">
-              <Mail className="h-4 w-4" />
-              {lang.global.footer.contactEmail}
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-brand-pink">
+              <img src="/whatsapp-logo.png" alt="WhatsApp" className="h-4 w-4" />
+              {language === 'zh' ? 'Whatsapp查詢' : 'WhatsApp Inquiry'}
             </a>
           </div>
         </div>

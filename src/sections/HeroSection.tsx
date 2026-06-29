@@ -56,13 +56,15 @@ export function HeroSection({ language }: HeroSectionProps) {
               </div>
             </div>
 
-            <div className="mt-5 flex flex-wrap justify-center gap-2">
-              {lang.hero.proof.map((proof: string) => (
-                <span key={proof} className="rounded-full border border-border/70 bg-white/75 px-3 py-1.5 text-xs font-semibold text-muted-foreground">
-                  {proof}
-                </span>
-              ))}
-            </div>
+            {lang.hero.proof.length > 0 && (
+              <div className="mt-5 flex flex-wrap justify-center gap-2">
+                {lang.hero.proof.map((proof: string) => (
+                  <span key={proof} className="rounded-full border border-border/70 bg-white/75 px-3 py-1.5 text-xs font-semibold text-muted-foreground">
+                    {proof}
+                  </span>
+                ))}
+              </div>
+            )}
 
             <div className="mt-8 grid w-full max-w-2xl grid-cols-3 gap-3">
               {lang.hero.stats.map((stat: { value: string; label: string }) => (
