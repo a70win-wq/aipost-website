@@ -40,14 +40,16 @@ export function PricingCard({ plan, isAnnual, language, className }: PricingCard
       {/* Price */}
       <div className="mt-6">
         <div className="flex items-baseline gap-1">
-          <span className="text-4xl font-bold text-brand-ink">HK${price}</span>
+          <span className="text-4xl font-bold text-brand-ink">HK${price.toLocaleString()}</span>
           <span className="text-muted-foreground text-sm">
-            {language === 'zh' ? '/月' : '/mo'}
+            {isAnnual ? lang.pricing.perYear : lang.pricing.perMonth}
           </span>
         </div>
         {isAnnual && (
           <p className="text-xs text-muted-foreground mt-1">
-            {language === 'zh' ? `年費 12 個月，免除 1 個月，即 HK$${plan.priceAnnual}/月` : `12 months, 1 month free — HK$${plan.priceAnnual}/mo`}
+            {language === 'zh'
+              ? `相當於 HK$${Math.round(plan.priceAnnual / 12)}/月`
+              : `Equivalent to HK$${Math.round(plan.priceAnnual / 12)}/mo`}
           </p>
         )}
       </div>
