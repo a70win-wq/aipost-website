@@ -4,7 +4,7 @@ import type { Language } from '@/types';
 import { t } from '@/i18n';
 
 const WHATSAPP_NUMBER = '85265451747';
-const WHATSAPP_MSG = '你根，查詢AIPOST服務';
+const WHATSAPP_MSG = '你好，查詢AIPOST服務';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
 
 interface FooterProps {
