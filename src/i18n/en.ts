@@ -15,7 +15,7 @@ const en = {
     },
     pricing: {
       taskDefinition: '1 content task = 1 topic + IG version + FB version + Hashtags + Scheduling',
-      monthly: 'Monthly', annual: 'Annual', save: 'Save 20%', perMonth: '/mo', popularBadge: 'Most Popular', cta: 'Subscribe Now',
+      monthly: 'Monthly', annual: 'Annual', save: '1 month free', perMonth: '/mo', popularBadge: 'Most Popular', cta: 'Subscribe Now',
     },
     trust: { cancelAnytime: 'Cancel anytime', securePayment: 'Secure card payment' },
     seo: {

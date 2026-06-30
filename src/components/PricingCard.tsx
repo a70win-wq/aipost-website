@@ -47,7 +47,7 @@ export function PricingCard({ plan, isAnnual, language, className }: PricingCard
         </div>
         {isAnnual && (
           <p className="text-xs text-muted-foreground mt-1">
-            {language === 'zh' ? `原價 HK$${plan.priceMonthly}/月，年費節省 20%` : `Originally HK$${plan.priceMonthly}/mo, save 20% with annual`}
+            {language === 'zh' ? `年費 12 個月，免除 1 個月，即 HK$${plan.priceAnnual}/月` : `12 months, 1 month free — HK$${plan.priceAnnual}/mo`}
           </p>
         )}
       </div>

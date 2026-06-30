@@ -29,7 +29,7 @@ const zh = {
       taskDefinition: '1 個內容任務 = 1 個主題 + IG 版本 + FB 版本 + Hashtag + 排程',
       monthly: '月費',
       annual: '年費',
-      save: '節省 20%',
+      save: '免除一個月',
       perMonth: '/月',
       popularBadge: '最受歡迎',
       cta: '立即訂閱',

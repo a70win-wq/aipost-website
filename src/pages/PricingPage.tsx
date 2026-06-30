@@ -24,10 +24,10 @@ export function PricingPage({ language }: PricingPageProps) {
       answerEn: 'Cancel anytime, billing stops next period. You can continue using until the current period ends.',
     },
     {
-      questionZh: '年費有折扣嗎？',
+      questionZh: '年費有優惠嗎？',
       questionEn: 'Is there an annual discount?',
-      answerZh: '是的，年費方案節省 20%。月費 HK$99 的方案，年費只需 HK$79/月。',
-      answerEn: 'Yes, annual plans save 20%. The HK$99/mo plan becomes HK$79/mo with annual billing.',
+      answerZh: '是的，年費 12 個月只需付 11 個月，免除一個月費用。',
+      answerEn: 'Yes, pay 11 months for 12 — one month is free with annual billing.',
     },
     {
       questionZh: '可以升級/降級方案嗎？',
