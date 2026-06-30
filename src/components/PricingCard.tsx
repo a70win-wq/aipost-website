@@ -42,7 +42,9 @@ export function PricingCard({ plan, isAnnual, language, className }: PricingCard
         <div className="flex items-baseline gap-1">
           <span className="text-4xl font-bold text-brand-ink">HK${price.toLocaleString()}</span>
           <span className="text-muted-foreground text-sm">
-            {isAnnual ? lang.pricing.perYear : lang.pricing.perMonth}
+            {isAnnual
+              ? (language === 'zh' ? '/年' : '/yr')
+              : (language === 'zh' ? '/月' : '/mo')}
           </span>
         </div>
         {isAnnual && (
