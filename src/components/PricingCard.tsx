@@ -1,6 +1,7 @@
 import { Check, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { GradientButton } from '@/components/GradientButton';
+import { getPaymentLink, isExternalLink } from '@/config/payment';
 import type { PricingPlan, Language } from '@/types';
 
 interface PricingCardProps {
@@ -40,18 +41,14 @@ export function PricingCard({ plan, isAnnual, language, className }: PricingCard
       {/* Price */}
       <div className="mt-6">
         <div className="flex items-baseline gap-1">
-          <span className="text-4xl font-bold text-brand-ink">HK${price.toLocaleString()}</span>
+          <span className="text-4xl font-bold text-brand-ink">HK${price}</span>
           <span className="text-muted-foreground text-sm">
-            {isAnnual
-              ? (language === 'zh' ? '/年' : '/yr')
-              : (language === 'zh' ? '/月' : '/mo')}
+            {language === 'zh' ? '/月' : '/mo'}
           </span>
         </div>
         {isAnnual && (
           <p className="text-xs text-muted-foreground mt-1">
-            {language === 'zh'
-              ? `相當於 HK$${Math.round(plan.priceAnnual / 12)}/月`
-              : `Equivalent to HK$${Math.round(plan.priceAnnual / 12)}/mo`}
+            {language === 'zh' ? `原價 HK$${plan.priceMonthly}/月，年費節省 20%` : `Originally HK$${plan.priceMonthly}/mo, save 20% with annual`}
           </p>
         )}
       </div>
@@ -73,14 +70,20 @@ export function PricingCard({ plan, isAnnual, language, className }: PricingCard
 
       {/* CTA */}
       <div className="mt-8">
-        <GradientButton
-          variant={plan.popular ? 'gradient' : 'outline-black'}
-          size="default"
-          to="/pricing"
-          className="w-full"
-        >
-          {language === 'zh' ? '立即訂閱' : 'Subscribe Now'}
-        </GradientButton>
+        {(() => {
+          const link = getPaymentLink(plan.id, isAnnual);
+          const external = isExternalLink(link);
+          return (
+            <GradientButton
+              variant={plan.popular ? 'gradient' : 'outline-black'}
+              size="default"
+              {...(external ? { href: link } : { to: link })}
+              className="w-full"
+            >
+              {language === 'zh' ? '立即訂閱' : 'Subscribe Now'}
+            </GradientButton>
+          );
+        })()}
       </div>
     </div>
   );
