@@ -29,9 +29,8 @@ const zh = {
       taskDefinition: '1 個內容任務 = 1 個主題 + IG 版本 + FB 版本 + Hashtag + 排程',
       monthly: '月費',
       annual: '年費',
-      save: '免除一個月',
+      save: '節省 20%',
       perMonth: '/月',
-      perYear: '/年',
       popularBadge: '最受歡迎',
       cta: '立即訂閱',
     },
@@ -111,9 +110,9 @@ const zh = {
 
   // ===== 價格 =====
   pricingPlans: [
-    { id: 'starter', nameZh: '入門', nameEn: 'Starter', priceMonthly: 99, priceAnnual: 1089, tasksZh: '10 個內容任務', tasksEn: '10 content tasks', targetZh: '小店 / 個人品牌', targetEn: 'Small shops / Personal brands', popular: false, featuresZh: ['10 個內容任務', 'IG + FB 雙版本', 'AI Hashtag 生成', '內容排程月曆', '品牌語氣設定'], featuresEn: ['10 content tasks', 'IG + FB dual versions', 'AI Hashtag generation', 'Content scheduling calendar', 'Brand tone settings'] },
-    { id: 'growth', nameZh: '成長', nameEn: 'Growth', priceMonthly: 199, priceAnnual: 2189, tasksZh: '20 個內容任務', tasksEn: '20 content tasks', targetZh: '穩定經營品牌', targetEn: 'Growing brands', popular: true, featuresZh: ['20 個內容任務', 'IG + FB 雙版本', 'AI Hashtag 生成', '內容排程月曆', '品牌語氣設定', '優先客服支援'], featuresEn: ['20 content tasks', 'IG + FB dual versions', 'AI Hashtag generation', 'Content scheduling calendar', 'Brand tone settings', 'Priority support'] },
-    { id: 'pro', nameZh: '專業', nameEn: 'Pro', priceMonthly: 299, priceAnnual: 3289, tasksZh: '30 個內容任務', tasksEn: '30 content tasks', targetZh: '每日曝光品牌', targetEn: 'Daily exposure brands', popular: false, featuresZh: ['30 個內容任務', 'IG + FB 雙版本', 'AI Hashtag 生成', '內容排程月曆', '品牌語氣設定', '優先客服支援'], featuresEn: ['30 content tasks', 'IG + FB dual versions', 'AI Hashtag generation', 'Content scheduling calendar', 'Brand tone settings', 'Priority support', 'Analytics reports'] },
+    { id: 'starter', nameZh: '入門', nameEn: 'Starter', priceMonthly: 99, priceAnnual: 79, tasksZh: '10 個內容任務', tasksEn: '10 content tasks', targetZh: '小店 / 個人品牌', targetEn: 'Small shops / Personal brands', popular: false, featuresZh: ['10 個內容任務', 'IG + FB 雙版本', 'AI Hashtag 生成', '內容排程月曆', '品牌語氣設定'], featuresEn: ['10 content tasks', 'IG + FB dual versions', 'AI Hashtag generation', 'Content scheduling calendar', 'Brand tone settings'] },
+    { id: 'growth', nameZh: '成長', nameEn: 'Growth', priceMonthly: 199, priceAnnual: 159, tasksZh: '20 個內容任務', tasksEn: '20 content tasks', targetZh: '穩定經營品牌', targetEn: 'Growing brands', popular: true, featuresZh: ['20 個內容任務', 'IG + FB 雙版本', 'AI Hashtag 生成', '內容排程月曆', '品牌語氣設定', '優先客服支援'], featuresEn: ['20 content tasks', 'IG + FB dual versions', 'AI Hashtag generation', 'Content scheduling calendar', 'Brand tone settings', 'Priority support'] },
+    { id: 'pro', nameZh: '專業', nameEn: 'Pro', priceMonthly: 299, priceAnnual: 239, tasksZh: '30 個內容任務', tasksEn: '30 content tasks', targetZh: '每日曝光品牌', targetEn: 'Daily exposure brands', popular: false, featuresZh: ['30 個內容任務', 'IG + FB 雙版本', 'AI Hashtag 生成', '內容排程月曆', '品牌語氣設定', '優先客服支援'], featuresEn: ['30 content tasks', 'IG + FB dual versions', 'AI Hashtag generation', 'Content scheduling calendar', 'Brand tone settings', 'Priority support'] },
   ] as PricingPlan[],
 
   // ===== FAQ =====
