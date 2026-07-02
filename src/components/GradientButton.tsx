@@ -9,6 +9,7 @@ interface GradientButtonProps {
   to?: string;
   className?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
 export function GradientButton({
@@ -19,6 +20,7 @@ export function GradientButton({
   to,
   className,
   onClick,
+  disabled = false,
 }: GradientButtonProps) {
   const sizeClasses = {
     sm: 'h-9 px-4 text-sm rounded-full',
@@ -34,7 +36,7 @@ export function GradientButton({
   };
 
   const baseClasses = cn(
-    'inline-flex items-center justify-center font-semibold cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/60 focus-visible:ring-offset-2',
+    'inline-flex items-center justify-center font-semibold cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/60 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70',
     sizeClasses[size],
     variantClasses[variant],
     className
@@ -48,5 +50,5 @@ export function GradientButton({
     return <a href={href} className={baseClasses}>{children}</a>;
   }
 
-  return <button onClick={onClick} className={baseClasses}>{children}</button>;
+  return <button type="button" onClick={onClick} disabled={disabled} className={baseClasses}>{children}</button>;
 }

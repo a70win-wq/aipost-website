@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { CreditCard } from 'lucide-react';
 import type { Language } from '@/types';
 import { t } from '@/i18n';
+import { CUSTOMER_PORTAL_LINK } from '@/config/payment';
 
 const WHATSAPP_NUMBER = '85265451747';
 const WHATSAPP_MSG = '你好，查詢AIPOST服務';
@@ -33,6 +34,11 @@ export function Footer({ language }: FooterProps) {
             <div className="flex flex-col gap-2">
               <Link to="/pricing" className="text-sm text-muted-foreground transition-colors hover:text-brand-pink">{lang.global.footer.productLinks.pricing}</Link>
               <Link to="/pricing" className="text-sm text-muted-foreground transition-colors hover:text-brand-pink">{lang.global.footer.productLinks.start}</Link>
+              {CUSTOMER_PORTAL_LINK && (
+                <a href={CUSTOMER_PORTAL_LINK} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-brand-pink">
+                  {lang.global.footer.productLinks.manageSubscription}
+                </a>
+              )}
             </div>
           </div>
 

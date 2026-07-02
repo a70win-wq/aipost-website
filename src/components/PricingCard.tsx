@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Check, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { GradientButton } from '@/components/GradientButton';
+import { createCheckoutSession, getSubscriptionFallbackLink } from '@/config/payment';
 import type { PricingPlan, Language } from '@/types';
 
 interface PricingCardProps {
@@ -11,11 +13,28 @@ interface PricingCardProps {
 }
 
 export function PricingCard({ plan, isAnnual, language, className }: PricingCardProps) {
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
   const price = isAnnual ? plan.priceAnnual : plan.priceMonthly;
+  const priceSuffix = isAnnual
+    ? (language === 'zh' ? '/年' : '/yr')
+    : (language === 'zh' ? '/月' : '/mo');
   const name = language === 'zh' ? plan.nameZh : plan.nameEn;
   const features = language === 'zh' ? plan.featuresZh : plan.featuresEn;
   const target = language === 'zh' ? plan.targetZh : plan.targetEn;
   const tasks = language === 'zh' ? plan.tasksZh : plan.tasksEn;
+
+  const handleSubscribe = async () => {
+    if (isCheckingOut) return;
+
+    setIsCheckingOut(true);
+    try {
+      const checkoutUrl = await createCheckoutSession(plan.id, isAnnual);
+      window.location.assign(checkoutUrl);
+    } catch (error) {
+      console.error(error);
+      window.location.assign(getSubscriptionFallbackLink(plan.id, isAnnual));
+    }
+  };
 
   return (
     <div className={cn(
@@ -40,14 +59,16 @@ export function PricingCard({ plan, isAnnual, language, className }: PricingCard
       {/* Price */}
       <div className="mt-6">
         <div className="flex items-baseline gap-1">
-          <span className="text-4xl font-bold text-brand-ink">HK${price}</span>
+          <span className="text-4xl font-bold text-brand-ink">HK${price.toLocaleString()}</span>
           <span className="text-muted-foreground text-sm">
-            {language === 'zh' ? '/月' : '/mo'}
+            {priceSuffix}
           </span>
         </div>
         {isAnnual && (
           <p className="text-xs text-muted-foreground mt-1">
-            {language === 'zh' ? `原價 HK$${plan.priceMonthly}/月，年費節省 20%` : `Originally HK$${plan.priceMonthly}/mo, save 20% with annual`}
+            {language === 'zh'
+              ? `月費 HK$${plan.priceMonthly}，年繳 HK$${price.toLocaleString()}（買 11 個月送 1 個月）`
+              : `HK$${plan.priceMonthly}/mo, HK$${price.toLocaleString()} billed yearly (pay 11 months, get 1 month free)`}
           </p>
         )}
       </div>
@@ -72,10 +93,13 @@ export function PricingCard({ plan, isAnnual, language, className }: PricingCard
         <GradientButton
           variant={plan.popular ? 'gradient' : 'outline-black'}
           size="default"
-          to="/pricing"
+          onClick={handleSubscribe}
+          disabled={isCheckingOut}
           className="w-full"
         >
-          {language === 'zh' ? '立即訂閱' : 'Subscribe Now'}
+          {isCheckingOut
+            ? (language === 'zh' ? '前往 Stripe...' : 'Opening Stripe...')
+            : (language === 'zh' ? '立即訂閱' : 'Subscribe Now')}
         </GradientButton>
       </div>
     </div>

@@ -26,7 +26,7 @@ export function PricingToggle({ isAnnual, setIsAnnual, language }: PricingToggle
       </button>
       <button
         type="button"
-        aria-label={language === 'zh' ? '選擇年費方案，節省20%' : 'Select annual billing, save 20%'}
+        aria-label={language === 'zh' ? '選擇年費方案，買11個月送1個月' : 'Select annual billing, pay 11 months and get 1 month free'}
         aria-pressed={isAnnual}
         onClick={() => setIsAnnual(true)}
         className={cn(
@@ -41,7 +41,7 @@ export function PricingToggle({ isAnnual, setIsAnnual, language }: PricingToggle
           'ml-1 text-xs',
           isAnnual ? 'text-white/80' : 'text-brand-pink font-medium'
         )}>
-          {language === 'zh' ? '節省20%' : 'Save 20%'}
+          {language === 'zh' ? '買11送1' : '1 mo free'}
         </span>
       </button>
     </div>

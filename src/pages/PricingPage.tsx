@@ -26,8 +26,8 @@ export function PricingPage({ language }: PricingPageProps) {
     {
       questionZh: '年費有折扣嗎？',
       questionEn: 'Is there an annual discount?',
-      answerZh: '是的，年費方案節省 20%。月費 HK$99 的方案，年費只需 HK$79/月。',
-      answerEn: 'Yes, annual plans save 20%. The HK$99/mo plan becomes HK$79/mo with annual billing.',
+      answerZh: '年費方案是買 11 個月送 1 個月，全年一次過收費。例如 HK$99/月的入門方案，年費為 HK$1089。',
+      answerEn: 'Annual billing is pay 11 months, get 1 month free. For example, the HK$99/mo Starter plan is billed at HK$1089/year.',
     },
     {
       questionZh: '可以升級/降級方案嗎？',
