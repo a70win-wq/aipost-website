@@ -5,13 +5,14 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { HomePage } from '@/pages/HomePage';
 import { PricingPage } from '@/pages/PricingPage';
+import { SubscribeSuccessPage } from '@/pages/SubscribeSuccessPage';
 import { TermsPage } from '@/pages/TermsPage';
 import { useLanguage } from '@/hooks/useLanguage';
 import { t } from '@/i18n';
 import type { Language } from '@/types';
 import './App.css';
 
-type SeoPage = 'home' | 'pricing' | 'terms';
+type SeoPage = 'home' | 'pricing' | 'terms' | 'subscribeSuccess';
 
 function setMeta(name: string, content: string, property = false) {
   const selector = property ? `meta[property="${name}"]` : `meta[name="${name}"]`;
@@ -34,6 +35,7 @@ function AppShell({ language, setLanguage }: { language: Language; setLanguage: 
     const pageByPath: Record<string, SeoPage> = {
       '/': 'home',
       '/pricing': 'pricing',
+      '/subscribe/success': 'subscribeSuccess',
       '/terms': 'terms',
     };
     const seo = lang.global.seo[pageByPath[location.pathname] ?? 'home'];
@@ -53,6 +55,7 @@ function AppShell({ language, setLanguage }: { language: Language; setLanguage: 
         <Routes>
           <Route path="/" element={<HomePage language={language} />} />
           <Route path="/pricing" element={<PricingPage language={language} />} />
+          <Route path="/subscribe/success" element={<SubscribeSuccessPage language={language} />} />
           <Route path="/terms" element={<TermsPage language={language} />} />
         </Routes>
       </div>

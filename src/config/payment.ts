@@ -35,6 +35,7 @@ export const CHECKOUT_SESSION_ENDPOINT = '/api/create-checkout-session';
 export const CUSTOMER_PORTAL_LINK = '';
 
 const WHATSAPP_NUMBER = '85265451747';
+const POST_SUBSCRIPTION_MESSAGE = '已訂閱，請跟進我的項目。';
 
 const PLAN_LABELS: Record<string, string> = {
   starter: 'Starter',
@@ -50,6 +51,10 @@ export function getSubscriptionFallbackLink(planId: string, isAnnual: boolean): 
   const cycle = isAnnual ? '年費' : '月費';
   const message = `你好，我想訂閱 AIPOST ${plan} ${cycle}方案。`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+export function getPostSubscriptionWhatsappLink(): string {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(POST_SUBSCRIPTION_MESSAGE)}`;
 }
 
 export async function createCheckoutSession(planId: string, isAnnual: boolean): Promise<string> {

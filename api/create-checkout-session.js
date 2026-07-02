@@ -87,7 +87,7 @@ export default async function handler(request, response) {
     'automatic_tax[enabled]': 'false',
     allow_promotion_codes: 'false',
     'payment_method_types[0]': 'card',
-    success_url: `${baseUrl}/pricing?checkout=success&plan=${encodeURIComponent(planId)}&cycle=${cycle}`,
+    success_url: `${baseUrl}/subscribe/success?plan=${encodeURIComponent(planId)}&cycle=${cycle}`,
     cancel_url: `${baseUrl}/pricing?checkout=cancelled&plan=${encodeURIComponent(planId)}&cycle=${cycle}`,
     client_reference_id: `aipost_${planId}_${cycle}`,
     'metadata[app]': 'aipost',

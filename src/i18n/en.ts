@@ -27,6 +27,10 @@ const en = {
         title: 'Pricing | AIPOST Monthly Subscription Plans',
         description: 'Compare AIPOST Starter, Growth, and Pro plans. Choose a paid plan to start.',
       },
+      subscribeSuccess: {
+        title: 'Thanks for subscribing | AIPOST',
+        description: 'AIPOST has received your subscription. Contact us on WhatsApp so we can follow up on your project.',
+      },
       terms: {
         title: 'Terms of Service | AIPOST',
         description: 'AIPOST terms covering subscription cancellation, payment, service scope, account security, and privacy.',

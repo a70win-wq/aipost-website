@@ -48,6 +48,10 @@ const zh = {
         title: '價格｜AIPOST 月費訂閱方案',
         description: '查看 AIPOST 入門、成長、專業 月費及年費方案。直接選方案開始使用。',
       },
+      subscribeSuccess: {
+        title: '感謝訂閱｜AIPOST',
+        description: 'AIPOST 已收到你的訂閱。立即透過 WhatsApp 聯絡，以便跟進你的項目。',
+      },
       terms: {
         title: '服務條款｜AIPOST',
         description: 'AIPOST 服務條款、取消訂閱、付款方式、帳戶安全與隱私政策摘要。',

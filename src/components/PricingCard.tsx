@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Check, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { GradientButton } from '@/components/GradientButton';
@@ -22,6 +22,25 @@ export function PricingCard({ plan, isAnnual, language, className }: PricingCard
   const features = language === 'zh' ? plan.featuresZh : plan.featuresEn;
   const target = language === 'zh' ? plan.targetZh : plan.targetEn;
   const tasks = language === 'zh' ? plan.tasksZh : plan.tasksEn;
+
+  useEffect(() => {
+    const resetCheckoutState = () => setIsCheckingOut(false);
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        resetCheckoutState();
+      }
+    };
+
+    window.addEventListener('pageshow', resetCheckoutState);
+    window.addEventListener('focus', resetCheckoutState);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      window.removeEventListener('pageshow', resetCheckoutState);
+      window.removeEventListener('focus', resetCheckoutState);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
 
   const handleSubscribe = async () => {
     if (isCheckingOut) return;
