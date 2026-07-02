@@ -24,7 +24,7 @@ export function PricingPage({ language }: PricingPageProps) {
       answerEn: 'Cancel anytime, billing stops next period. You can continue using until the current period ends.',
     },
     {
-      questionZh: '年費有折扣嗎？',
+      questionZh: '年費有優惠嗎？',
       questionEn: 'Is there an annual discount?',
       answerZh: '年費方案是買 11 個月送 1 個月，全年一次過收費。例如 HK$99/月的入門方案，年費為 HK$1089。',
       answerEn: 'Annual billing is pay 11 months, get 1 month free. For example, the HK$99/mo Starter plan is billed at HK$1089/year.',
