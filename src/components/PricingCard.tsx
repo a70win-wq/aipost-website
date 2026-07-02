@@ -12,7 +12,10 @@ interface PricingCardProps {
 }
 
 export function PricingCard({ plan, isAnnual, language, className }: PricingCardProps) {
-  const price = isAnnual ? plan.priceAnnual : plan.priceMonthly;
+  const price = isAnnual ? plan.priceAnnual * 12 : plan.priceMonthly;
+  const priceSuffix = isAnnual
+    ? (language === 'zh' ? '/年' : '/yr')
+    : (language === 'zh' ? '/月' : '/mo');
   const name = language === 'zh' ? plan.nameZh : plan.nameEn;
   const features = language === 'zh' ? plan.featuresZh : plan.featuresEn;
   const target = language === 'zh' ? plan.targetZh : plan.targetEn;
@@ -41,14 +44,16 @@ export function PricingCard({ plan, isAnnual, language, className }: PricingCard
       {/* Price */}
       <div className="mt-6">
         <div className="flex items-baseline gap-1">
-          <span className="text-4xl font-bold text-brand-ink">HK${price}</span>
+          <span className="text-4xl font-bold text-brand-ink">HK${price.toLocaleString()}</span>
           <span className="text-muted-foreground text-sm">
-            {language === 'zh' ? '/月' : '/mo'}
+            {priceSuffix}
           </span>
         </div>
         {isAnnual && (
           <p className="text-xs text-muted-foreground mt-1">
-            {language === 'zh' ? `原價 HK$${plan.priceMonthly}/月，年費節省 20%` : `Originally HK$${plan.priceMonthly}/mo, save 20% with annual`}
+            {language === 'zh'
+              ? `即 HK$${plan.priceAnnual}/月 ｜ 原價 HK$${plan.priceMonthly}/月，年費節省 20%`
+              : `HK$${plan.priceAnnual}/mo ｜ Originally HK$${plan.priceMonthly}/mo, save 20% with annual`}
           </p>
         )}
       </div>
